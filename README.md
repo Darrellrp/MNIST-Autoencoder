@@ -1,5 +1,5 @@
-# MNIST-Stacked-Autoencoder
-Machine Learning - MNIST Stacked Autoencoder (Image reconstructor)
+# MNIST-Autoencoder
+Machine Learning - MNIST Autoencoder (Image reconstructor)
 
 ### Autoencoder flow
 ![alt Autoencoder Flow](https://miro.medium.com/max/1400/1*MMRDQ4g3QvQNc7iJsKM9pg@2x.png)
