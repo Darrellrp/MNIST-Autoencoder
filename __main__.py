@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from keras.models import Sequential
 import numpy as np
 import random
+from functions import add_gaussian_noise
 
 # Input
 MNIST_IMG_DIM = [28, 28]
@@ -13,7 +14,7 @@ HIDDEN_SIZE = 128
 CODE_SIZE = 32
 
 # Training
-EPOCHS = 5
+EPOCHS = 10
 BATCH_SIZE = 32
 VERBOSE = 1
 
@@ -33,6 +34,9 @@ NUMBER_SHOWN_OF_PREDICTIONS = 4
 # Load mnist dataset and generate train & test dataset
 (x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
+x_train = add_gaussian_noise(x_train, 0.1, 200)
+x_test = add_gaussian_noise(x_test, 0.1, 200)
+
 x_train_shape = x_train.shape[0]
 INPUT_SIZE = np.prod(MNIST_IMG_DIM)
 
@@ -41,8 +45,8 @@ x_train = x_train.reshape(x_train.shape[0], INPUT_SIZE)
 x_test = x_test.reshape(x_test.shape[0], INPUT_SIZE)
 
 # Normalize RGB-values
-x_train = np.true_divide(x_train, 255)
-x_test = np.true_divide(x_test, 255)
+# x_train = np.true_divide(x_train, 255)
+# x_test = np.true_divide(x_test, 255)
 
 # Convert to float32
 x_train = x_train.astype('float32')
