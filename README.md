@@ -1,4 +1,4 @@
-# MNIST-Autoencoder
+# MNIST-Autoencoder-Denoiser
 Machine Learning - MNIST Autoencoder (Image reconstructor)
 
 ### Autoencoder flow
